@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="background-color:#fffce8;">
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-lg-4 col-sm-4">
+                            <div class="box_main">
+                                <h4 class="shirt_text">{{ product.ProductName }}</h4>
+                                <p  style="color: #B0413E">Price: $ <span style="color: #262626; font-weight: bold">{{ product.Price }}</span></p>
+                                <div class="tshirt_img"><img src=" {{ asset('upload/productImages/' ~ product.Image) }}" width="250px" height="200px"></div>
+                                <div class="btn_main">
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
